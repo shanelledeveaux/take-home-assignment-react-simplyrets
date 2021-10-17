@@ -1,0 +1,31 @@
+.property-card {
+    width: 320px;
+    padding: 10px;
+}
+
+.property-card img{
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.property-card .property-card-specs{
+    display: flex;
+    font-size: 1rem;
+}
+
+.property-card .property-card-list-price {
+    display: flex;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.property-card .property-card-address{
+    display: flex;
+    font-size: .75rem;
+}
+
+.property-card .property-card-list-date{
+    display: flex;
+    font-size: .5rem;
+    color: grey;
+}

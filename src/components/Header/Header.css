@@ -1,0 +1,8 @@
+.header {
+    padding: 10px 16px;
+    background: rgb(244, 244, 244);
+    color: black;
+    position: fixed;
+    width: 100%;
+    font-size: 1.5rem;
+  }

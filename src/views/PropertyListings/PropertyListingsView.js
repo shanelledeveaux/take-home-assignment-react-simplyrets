@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Property from "../components/Property"
+import Property from "../../components/Property/Property";
+import "./PropertyListings.css";
 
 const PropertyListingsView = () => {
   const [propertyListings, setPropertyListings] = useState([]);
@@ -37,7 +38,7 @@ const getFormattedDate = (dateString) => {
     var day = date.getDate().toString();
     day = day.length > 1 ? day : '0' + day;
     
-    return month + '/' + day + '/' + year;
+    return 'Listed:' + month + '/' + day + '/' + year;
 }
 
 const getFormattedListPrice = (price) => {
@@ -81,7 +82,7 @@ const property = propertyListings?.map((listing) => {
       {loading ? (
         <div>Loading.....</div>
       ) : (
-        <div>
+        <div className="property-view-page">
             {property}
         </div>
       )}
