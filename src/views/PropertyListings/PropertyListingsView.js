@@ -8,9 +8,11 @@ const PropertyListingsView = () => {
   const [loading, setLoading] = useState(false);
 
   const getProperties = () => {
+    // While fetching properties, loading state is true.
     setLoading(true);
 
-    axios.get("https://api.simplyrets.com/properties?status=Active&type=residential&count=true", 
+    // Utitlized documentation to determine parameters desired and ability to authenticate
+    axios.get("https://api.simplyrets.com/properties?status=Active&type=residential", 
     { headers: { Authorization: "Basic " + btoa("simplyrets:simplyrets")}})
     .then(response => {
       console.log(response.data)
@@ -23,11 +25,11 @@ const PropertyListingsView = () => {
     }
 
 useEffect (() => {
-    console.log("hello")
     getProperties();
 }, []);
 
 const getFormattedDate = (dateString) => {
+    // Formats to MM/DD/YY string
     var date = new Date(dateString);
 
     var year = date.getFullYear().toString().substr(-2);
@@ -38,10 +40,11 @@ const getFormattedDate = (dateString) => {
     var day = date.getDate().toString();
     day = day.length > 1 ? day : '0' + day;
     
-    return 'Listed:' + month + '/' + day + '/' + year;
+    return 'Listed: ' + month + '/' + day + '/' + year;
 }
 
 const getFormattedListPrice = (price) => {
+    // Formats price to currency with no decimals.
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',

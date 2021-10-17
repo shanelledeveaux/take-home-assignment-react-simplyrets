@@ -1,11 +1,12 @@
-import route from "./routes";
+import view from "./routes";
 import Header from "./components/Header/Header";
 
 const App = () => {
     return (
       <div className="App">
         <Header />
-        {route}
+        {/* Whatever route the user is on will determine displayed here. See routes.js */}
+        {view}
       </div>
     );
 }
