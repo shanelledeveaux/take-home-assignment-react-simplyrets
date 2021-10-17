@@ -1,10 +1,15 @@
 import React from "react";
 
 const Property = props => {
+    return (
     <div>
-        {/* <img className="property-photo" src={props.properties.photos[0]} alt={"Carlie Anglemire"}/> */}
-        hello
+        <img className="photo" src={props.photo} alt={props.imageAltText}/>
+        <span>{props.propertySpecs}</span>
+        <span>{props.listPrice}</span>
+        <span>{props.address}</span>
+        <span>{props.listDate}</span>
     </div>
+    )
 };
 
 export default Property;
